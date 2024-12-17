@@ -1,0 +1,130 @@
+
+* {
+    font-family: sans-serif;
+}
+
+#container {
+    width: 600px;
+    height: auto;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 20px;
+}
+
+.input-box {
+    width: 100%;
+    height: 60px;
+    border: 2px solid black;
+    padding: 0;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+}
+
+
+input {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 0 20px;
+    font-size: large;
+    border: none;
+    outline: none;
+}
+
+.input-label {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    font-size: 20px;
+    transition: all .3s;
+}
+
+
+input:focus {
+    bottom: 0;
+    height: 40px;
+}
+input:focus + .input-label {
+    top: 10%;
+    transform: translateY(0);
+    font-size: 14px;
+}
+
+.filled-input {
+    bottom: 0;
+    height: 40px;
+}
+
+.filled-input-label {
+    top: 10%;
+    transform: translateY(0);
+    font-size: 14px;
+}
+
+button {
+    padding: 8px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: cornflowerblue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .1s;
+}
+
+button:active {
+    transform: translate(2px);
+    scale: .95;
+}
+
+
+.error-message {
+    color: red;
+    width: 600px;
+    margin: auto;
+    margin-top: 30px;
+    display: none;
+}
+
+.error-message-show {
+    display: block;
+    animation: shake .3s linear;
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(10px);
+    }
+    20% {
+        transform: translateX(0);
+    }
+    40% {
+        transform: translateX(10px);
+    }
+    60% {
+        transform: translateX(0);
+    }
+    80% {
+        transform: translateX(10px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* media query for small screen */
+
+@media screen and (max-width:520px) {
+    #container {
+        width: 95%;
+    }
+}
